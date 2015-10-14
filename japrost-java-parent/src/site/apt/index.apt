@@ -1,0 +1,21 @@
+ -----
+ Java Development
+ -----
+ alexxismachine
+ -----
+ 
+JaProSt - Java Development
+
+  Dieses Eltern-Projekt ist für allgemeine Java-Projekte gedacht.
+  
+  In diesem Pojekt werden alle Einstellungen gemacht, die für solche 
+  Projekte gelten sollen.
+  Es enthält auch die Resourcen zur Qualitässicherung.
+  
+  Konkrete Projekte gibt es in der {{{./projects.html}Projekt-Übersicht}}.
+	
+* DRAFT // SNAPSHOT
+
+	Dies ist alles (noch) nur ein Test! 
+
+	

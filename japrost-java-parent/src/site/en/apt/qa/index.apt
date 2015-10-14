@@ -1,0 +1,15 @@
+ -----
+ QA
+ -----
+ alexxismachine
+ -----
+
+QA
+
+* Static code analysis
+
+** Checkstyle
+
+*** Profile {{{../../qa/checkstyle_easy-going.xml}'easy-going'}}
+  
+  A simple profile just to test if checkstyle is working. 

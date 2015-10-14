@@ -1,0 +1,36 @@
+ -----
+ Java Parent
+ -----
+ alexxismachine
+ -----
+ 2010-02-22
+ -----
+
+Java Programming Studio - Java Parent
+
+  This is the common base of all JaProSt projects that do java deveopment.
+  Shurely it is based on the JaProSt-parent.
+  
+* Build
+
+  Development is done with Java 1.8 since ...
+  
+* Reports
+
+  inherited from the parent
+  
+* Dependency Management
+
+  Common dependencies, to be used in projects.
+  
+** Scope compile
+
+*** org.apache.commons:commons-lang3:3.1
+
+  Language Utilities
+
+** Scope test
+
+*** org.outsideMyBox:testUtils:0.1.1:test
+
+  BeanLikeTester for easy tests of JavaBeans.  

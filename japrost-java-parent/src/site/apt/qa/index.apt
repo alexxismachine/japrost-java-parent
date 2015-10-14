@@ -1,0 +1,15 @@
+ -----
+ QA
+ -----
+ alexxismachine
+ -----
+
+QA
+
+* Statische Code Analyse
+
+** Checkstyle
+
+*** Profil {{{./checkstyle_easy-going.xml}'easy-going'}}
+  
+  Ein einfaches Profil um zu testen, ob Checksyle funktioniert. 

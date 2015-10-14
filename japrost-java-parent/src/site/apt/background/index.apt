@@ -1,0 +1,17 @@
+ -----
+ Hintergründe
+ -----
+ alexxismachine
+ -----
+
+Hintergründe
+
+  Diese Seite zeigt eine Übersicht der Seiten mit den Hintergrundinformationen zu diesem Projekt.
+
+*--*--*
+ <<Dokument>> | <<Beschreibung>> | 
+*--+--+
+ {{{./about.html}Über JaProSt Parent}} | Informationen zum Maven-Setup und Konfiguration |
+*--+--+
+ {{{./changes.html}Änderungen}} | Eine simple Änderungshistorie |
+*--+--+
