@@ -13,5 +13,5 @@ Hintergründe
 *--+--+
  {{{./about.html}Über JaProSt Parent}} | Informationen zum Maven-Setup und Konfiguration |
 *--+--+
- {{{./changes.html}Änderungen}} | Eine simple Änderungshistorie |
+ {{{../changes-report.html}Änderungen}} | Eine simple Änderungshistorie |
 *--+--+

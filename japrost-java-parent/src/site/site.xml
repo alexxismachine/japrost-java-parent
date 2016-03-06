@@ -1,58 +1,51 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <project
-	xmlns="http://maven.apache.org/DECORATION/1.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
-	name="JaProSt Java Development">
+  xmlns="http://maven.apache.org/DECORATION/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
+  name="JaProSt Java Development">
+  
+  <body>
+    <breadcrumbs>
+      <item
+        name="JaProSt"
+        href="${japrost.project.url}/index.html" />
+      <item
+        name="Java"
+        href="index.html" />
+    </breadcrumbs>
 
-	<version position="bottom" />
-	<publishDate position="right" />
+    <menu name="Java">
+      <item
+        name="Übersicht"
+        href="index.html" />
+    </menu>
 
-	<bannerLeft>
-		<name>JaProSt Java Development</name>
-		<src>images/JaProSt-logo.gif</src>
-		<href>${japrostProjectUrl}</href>
-	</bannerLeft>
+    <menu name="QA">
+      <item
+        name="Übersicht"
+        href="qa/index.html" />
+    </menu>
 
-	<body>
-		<breadcrumbs>
-			<item
-				name="Java"
-				href="index.html" />
-		</breadcrumbs>
+    <menu name="Projekt Aufbau">
+      <item
+        name="Hintergründe"
+        collapse="true"
+        href="background/index.html">
+        <item
+          name="Über ..."
+          href="background/about.html" />
+        <item
+          name="Änderungen"
+          href="./changes-report.html" />
+      </item>
+      <item
+        name="Impressum"
+        href="../imprint.html" />
+    </menu>
 
-		<menu name="Java">
-			<item
-				name="Übersicht"
-				href="index.html" />
-		</menu>
-		
-		<menu name="QA">
-			<item
-				name="Übersicht"
-				href="qa/index.html" />
-		</menu>
-
-		<menu name="Projekt Aufbau">
-			<item
-				name="Hintergründe"
-				collapse="true"
-				href="background/index.html">
-				<item
-					name="Über ..."
-					href="background/about.html" />
-				<item
-					name="Änderungen"
-					href="background/changes.html" />
-			</item>
-			<item
-				name="Impressum"
-				href="../imprint.html" />
-		</menu>
-	</body>
-	<skin>
-		<groupId>de.japrost</groupId>
-		<artifactId>${japrost.site.skin.artifact}</artifactId>
-		<version>${japrost.site.skin.version}</version>
-	</skin>
+    <menu
+      ref="reports"
+      inherit="bottom" />
+  </body>
 </project>
