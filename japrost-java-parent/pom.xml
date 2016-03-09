@@ -168,6 +168,7 @@
               <groupId>de.japrost</groupId>
               <artifactId>japrost-java-parent</artifactId>
               <classifier>qa-resources</classifier>
+              <version>1</version>
             </dependency>
           </dependencies>
         </plugin>
