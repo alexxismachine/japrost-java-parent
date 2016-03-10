@@ -19,6 +19,9 @@
       <item
         name="Übersicht"
         href="index.html" />
+      <item
+        name="Projekte"
+        href="projects.html" />
     </menu>
 
     <menu name="QA">
