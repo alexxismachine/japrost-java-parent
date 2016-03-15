@@ -34,3 +34,8 @@ Java Programming Studio - Java Parent
 *** org.outsideMyBox:testUtils:0.1.1:test
 
   BeanLikeTester for easy tests of JavaBeans.  
+  
+* Quality Assurance
+
+  The property <<<japrost.qa.version>>> determins the version of QA resources to use.
+  

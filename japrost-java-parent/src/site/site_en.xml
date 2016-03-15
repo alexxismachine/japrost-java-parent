@@ -21,12 +21,6 @@
         href="index.html" />
     </menu>
 
-    <menu name="QA">
-      <item
-        name="Overview"
-        href="qa/index.html" />
-    </menu>
-
     <menu name="Project Layout">
       <item
         name="Background"

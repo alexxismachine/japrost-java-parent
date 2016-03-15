@@ -22,6 +22,7 @@
     <japrost.site.project.path>java</japrost.site.project.path>
     <java.source.version>1.8</java.source.version>
     <java.target.version>1.8</java.target.version>
+    <japrost.qa.version>1.0-SNAPSHOT</japrost.qa.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- plugin versions -->
     <version.jacoco-maven-plugin>0.7.3.201502191951</version.jacoco-maven-plugin>
@@ -92,25 +93,6 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>${version-maven-javadoc-plugin}</version>
       </plugin>
-      <!-- maven deploy plugin implicitly used -->
-      <plugin>
-        <inherited>false</inherited>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptors>
-            <descriptor>src/assembly/qa-resources.xml</descriptor>
-          </descriptors>
-        </configuration>
-        <executions>
-          <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -155,20 +137,15 @@
     <pluginManagement>
       <plugins>
         <plugin>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <version>${version.maven-assembly-plugin}</version>
-        </plugin>
-        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
           <version>${version-maven-checkstyle-plugin}</version>
           <dependencies>
             <dependency>
-              <!-- TODO have independent resources for qa? -->
               <groupId>de.japrost</groupId>
-              <artifactId>japrost-java-parent</artifactId>
-              <classifier>qa-resources</classifier>
-              <version>1</version>
+              <artifactId>japrost-qa</artifactId>
+              <classifier>java-qa-resources</classifier>
+              <version>${japrost.qa.version}</version>
             </dependency>
           </dependencies>
         </plugin>

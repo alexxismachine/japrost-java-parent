@@ -24,12 +24,6 @@
         href="projects.html" />
     </menu>
 
-    <menu name="QA">
-      <item
-        name="Übersicht"
-        href="qa/index.html" />
-    </menu>
-
     <menu name="Projekt Aufbau">
       <item
         name="Hintergründe"

@@ -12,6 +12,10 @@
       <action type="update">
         Update to new parent.
       </action>
+      <action type="removed">
+        Moved QA to own project to develop it independent of parent.
+      </action>
+
     </release>
   </body>
 </document>
