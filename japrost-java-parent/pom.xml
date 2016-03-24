@@ -25,10 +25,10 @@
     <japrost.qa.version>1.0-SNAPSHOT</japrost.qa.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- plugin versions -->
-    <version.jacoco-maven-plugin>0.7.3.201502191951</version.jacoco-maven-plugin>
     <version.maven-assembly-plugin>2.5.3</version.maven-assembly-plugin>
-    <version-maven-checkstyle-plugin>2.14</version-maven-checkstyle-plugin>
-    <version-maven-javadoc-plugin>2.10.1</version-maven-javadoc-plugin>
+    <version-maven-checkstyle-plugin>2.17</version-maven-checkstyle-plugin>
+    <version.jacoco-maven-plugin>0.7.6.201602180812</version.jacoco-maven-plugin>
+    <version-maven-javadoc-plugin>2.10.3</version-maven-javadoc-plugin>
     <version-maven-jxr-plugin>2.5</version-maven-jxr-plugin>
     <version-maven-source-plugin>2.4</version-maven-source-plugin>
     <!-- dependencies versions -->
@@ -36,6 +36,7 @@
     <version.commons-lang3>3.1</version.commons-lang3>
     <version.easymock>3.2</version.easymock>
     <version.junit>4.11</version.junit>
+    <version.mockito-core>1.10.19</version.mockito-core>
     <version.testUtils>0.1.1</version.testUtils>
   </properties>
 
@@ -65,14 +66,14 @@
         <scope>test</scope>
       </dependency>
       <dependency>
-        <groupId>org.easymock</groupId>
-        <artifactId>easymock</artifactId>
-        <version>${version.easymock}</version>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>${version.mockito-core}</version>
         <scope>test</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
-  
+
   <build>
     <plugins>
       <plugin>
@@ -122,7 +123,14 @@
                   <element>BUNDLE</element>
                   <limits>
                     <limit>
-                      <counter>COMPLEXITY</counter>
+                      <!-- overall INSTRUCTION coverage must be 60% -->
+                      <counter>INSTRUCTION</counter>
+                      <value>COVEREDRATIO</value>
+                      <minimum>0.60</minimum>
+                    </limit>
+                    <limit>
+                      <!-- overall BRANCH coverage must be 60% -->
+                      <counter>BRANCH</counter>
                       <value>COVEREDRATIO</value>
                       <minimum>0.60</minimum>
                     </limit>
@@ -133,24 +141,25 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>${version-maven-checkstyle-plugin}</version>
+        <dependencies>
+          <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>6.16.1</version>
+          </dependency>
+          <dependency>
+            <groupId>de.japrost</groupId>
+            <artifactId>japrost-qa</artifactId>
+            <classifier>java-qa-resources</classifier>
+            <version>${japrost.qa.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
     </plugins>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>${version-maven-checkstyle-plugin}</version>
-          <dependencies>
-            <dependency>
-              <groupId>de.japrost</groupId>
-              <artifactId>japrost-qa</artifactId>
-              <classifier>java-qa-resources</classifier>
-              <version>${japrost.qa.version}</version>
-            </dependency>
-          </dependencies>
-        </plugin>
-      </plugins>
-    </pluginManagement>
   </build>
 
   <!-- additional reporting for java projects -->
