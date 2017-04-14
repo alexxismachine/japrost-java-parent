@@ -9,7 +9,7 @@
     <breadcrumbs>
       <item
         name="JaProSt"
-        href="${japrost.project.url}/en/index.html" />
+        href="http://www.japrost.de/en/index.html" />
       <item
         name="Java"
         href="../en/index.html" />
