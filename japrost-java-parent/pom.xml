@@ -7,13 +7,13 @@
   <parent>
     <groupId>de.japrost</groupId>
     <artifactId>japrost-parent</artifactId>
-    <version>5.2-SNAPSHOT</version>
+    <version>5.2</version>
   </parent>
 
   <artifactId>japrost-java-parent</artifactId>
   <version>2.0-SNAPSHOT</version>
   <packaging>pom</packaging>
- 
+
   <name>JaProSt Java Development</name>
   <description>Java Programming Studio - Java Development</description>
   <url>http://www.japrost.de/java/</url>
@@ -34,7 +34,7 @@
     <version.commons-io>2.4</version.commons-io>
     <version.commons-lang3>3.1</version.commons-lang3>
     <version.easymock>3.2</version.easymock>
-    <version.junit>4.12</version.junit> 
+    <version.junit>4.12</version.junit>
     <version.mockito-core>1.10.19</version.mockito-core>
     <version.testUtils>0.1.1</version.testUtils>
   </properties>
@@ -195,7 +195,39 @@
       </plugin>
     </plugins>
   </reporting>
-
+  <profiles>
+    <profile>
+      <id>javadocNsources</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadoc</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
   <distributionManagement>
     <site>
       <id>japrostSiteId</id>
@@ -203,4 +235,8 @@
       <url>${japrost.distribution.site.url}/java/</url>
     </site>
   </distributionManagement>
+  <scm>
+    <developerConnection>scm:git:git://bitbucket.org/daprost/japrost-java-parent</developerConnection>
+    <url>https://bitbucket.org/daprost/japrost-java-parent</url>
+  </scm>
 </project>
