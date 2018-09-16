@@ -11,6 +11,66 @@ Java Programming Studio - Java Parent
   Dies ist die gemeinsame Basis für alle JaProSt Projekte, die sich mit Java Entwicklung befassen.
   Sie basiert natürlich auf der JaProSt-Parent.
   
+* Properties
+
+** Konfiguration
+ 
+*--+--+--+
+|| Property || Beschreibung || Wert ||
+*--+--+--+
+| java.source.version | Source Version für das Compiler-Plugin | 1.8 |
+*--+--+--+
+| java.target.version | Target Version für das Compiler-Plugin | 1.8 |
+*--+--+--+
+| japrost.qa.version | Version der QA-Artefakte | 1.0-SNAPSHOT |
+*--+--+--+
+| project.build.sourceEncoding | Encoding des Source-Codes | UTF-8 |
+*--+--+--+
+
+** Build-Plugins 
+
+*--+--+--+
+|| Property || Beschreibung || Wert ||
+*--+--+--+
+| version.maven-assembly-plugin | Plugin-Version | 2.5.3 |
+*--+--+--+
+| version-maven-checkstyle-plugin | Plugin-Version | 2.17 |
+*--+--+--+
+| version.jacoco-maven-plugin | Plugin-Version | 0.8.1 |
+*--+--+--+
+| version-maven-javadoc-plugin | Plugin-Version | 2.10.3 |
+*--+--+--+
+| version-maven-jxr-plugin | Plugin-Version | 2.5 |
+*--+--+--+
+| version-maven-source-plugin | Plugin-Version | 2.4 |
+*--+--+--+
+
+** Laufzeit Abhängigkeiten
+
+*--+--+--+
+|| Property || Beschreibung || Wert ||
+*--+--+--+
+| version.commons-io | Dependency-Version | 2.4 |
+*--+--+--+
+| version.commons-lang3 | Dependency-Version | 3.1 |
+*--+--+--+
+
+** Test Abhängigkeiten
+
+*--+--+--+
+|| Property || Beschreibung || Wert ||
+*--+--+--+
+| version.assertj | Test Dependency-Version | 3.8.0 |
+*--+--+--+
+| version.easymock | Test Dependency-Version | 3.2 |
+*--+--+--+
+| version.junit | Test Dependency-Version | 4.12 |
+*--+--+--+
+| version.mockito-core | Test Dependency-Version | 1.10.19 |
+*--+--+--+
+| version.testUtils | Test Dependency-Version | 0.1.1 |
+*--+--+--+
+
 * Build
 
   Entwicklung findet in Java 1.8 statt, da ...
@@ -19,27 +79,6 @@ Java Programming Studio - Java Parent
 
   Vererbt aus der parent.
   
-* Dependency Management
-
-  Allgemeine Abhägigkeiten, die in den Projekten verwendet werden können
-  
-** Scope compile
-
-*** org.apache.commons:commons-lang3:3.1
-
-  Language Utilities
-
-** Scope test
-
-*** org.mockito:mockito-core:<<<version.mockito-core>>>
-
-  Mocking-Framework. 
-  Hier wird mockito gegenüber easymock bevozugt, da die Aufrufe in den Mocks in der Regel nicht wirklich relevant sind.
-
-*** org.outsideMyBox:testUtils:0.1.1:test
-
-  BeanLikeTester zum einfachen Testen von JavaBeans.
-
 * Quality Assurance
 
   Das Property <<<japrost.qa.version>>> legt die Version der QA-Einstellungen für die Java-Projekte fest.
