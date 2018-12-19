@@ -18,9 +18,9 @@ Java Programming Studio - Java Parent
 *--+--+--+
 || Property || Beschreibung || Wert ||
 *--+--+--+
-| java.source.version | Source Version für das Compiler-Plugin | 1.8 |
+| java.source.version | Source Version für das Compiler-Plugin | 11 |
 *--+--+--+
-| java.target.version | Target Version für das Compiler-Plugin | 1.8 |
+| java.target.version | Target Version für das Compiler-Plugin | 11 |
 *--+--+--+
 | japrost.qa.version | Version der QA-Artefakte | 1.0-SNAPSHOT |
 *--+--+--+
@@ -73,7 +73,7 @@ Java Programming Studio - Java Parent
 
 * Build
 
-  Entwicklung findet in Java 1.8 statt, da ...
+  Entwicklung in Java 11.
   
 * Reports
 

@@ -4,6 +4,14 @@
   xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
   <body>
     <release
+      version="11.0.0"
+      description="Java 11"
+      date="tbd">
+      <action type="update">
+        Java 11 as base version.
+      </action>
+    </release>
+    <release
       version="2.0"
       description="pom and reports"
       date="2017-05-15">
@@ -11,7 +19,7 @@
         Rework pom to use less maven properties
       </action>
       <action type="update">
-        Remove eclipse artifacts from scm 
+        Remove eclipse artifacts from scm
       </action>
       <action type="add">
         Add changes report.
@@ -20,9 +28,9 @@
         Update to new parent.
       </action>
       <action type="removed">
-        Moved QA to own project to develop it independent of parent.
+        Moved QA to own project to develop it
+        independent of parent.
       </action>
-
     </release>
   </body>
 </document>
