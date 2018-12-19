@@ -10,9 +10,8 @@ JaProSt - Java Development
   
   This project holds the main configuration for those projects.
   It also contains the resources for QA. 
-	
-* DRAFT // SNAPSHOT
 
-	This site is (currently) just a test! 
+* Versioningscheme
 
-	
+  The versioning of this project is based on the configured java version.
+  For each java version there is a corresponding release branch. 

@@ -8,14 +8,13 @@ JaProSt - Java Development
 
   Dieses Eltern-Projekt ist für allgemeine Java-Projekte gedacht.
   
-  In diesem Pojekt werden alle Einstellungen gemacht, die für solche 
-  Projekte gelten sollen.
+  In diesem Pojekt werden alle Einstellungen gemacht, die für solche Projekte gelten sollen.
   Es enthält auch die Resourcen zur Qualitässicherung.
   
   Konkrete Projekte gibt es in der {{{./projects.html}Projekt-Übersicht}}.
-	
-* DRAFT // SNAPSHOT
+  
+* Versionierungsschema
 
-	Dies ist alles (noch) nur ein Test! 
-
-	
+  Dieses Projekt ist auf Basis der zugrundeliedenden Java-Version versioniert.
+  Für jede Java-Version gibt es einen Release-Branch mit der entsprechend
+  vorkonfigurierten Java-Version. 
