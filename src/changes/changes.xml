@@ -4,9 +4,14 @@
   xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
   <body>
     <release
+      version="11.0.1"
+      description="Java 11 updates"
+      date="tbd">
+    </release>
+    <release
       version="11.0.0"
       description="Java 11"
-      date="tbd">
+      date="2018-12-19">
       <action type="update">
         Java 11 as base version.
       </action>
