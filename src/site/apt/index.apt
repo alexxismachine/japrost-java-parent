@@ -17,4 +17,6 @@ JaProSt - Java Development
 
   Dieses Projekt ist auf Basis der zugrundeliedenden Java-Version versioniert.
   Für jede Java-Version gibt es einen Release-Branch mit der entsprechend
-  vorkonfigurierten Java-Version. 
+  vorkonfigurierten Java-Version.
+  
+  Der <<<master>>>-Branch ist für die übergreifende Site zuständig. 

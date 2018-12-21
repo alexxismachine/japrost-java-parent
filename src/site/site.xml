@@ -27,6 +27,9 @@
       <item
         name="Projekte"
         href="projects.html" />
+      <item
+        name="Parent Projekte"
+        href="parent.html" />
     </menu>
 
     <menu name="Projekt Aufbau">

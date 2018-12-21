@@ -1,0 +1,12 @@
+ -----
+ Java Parent Projekte
+ -----
+
+Java Parent Projekte
+
+  Für jede Java Version gibt es ein Parent-Projekt mit den für diese Version zugenschnittenen Abhängikeiten.
+
+  {{{../java8/index.html}Java 8}}
+  
+  {{{../java11/index.html}Java 11}}
+      
