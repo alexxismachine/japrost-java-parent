@@ -242,7 +242,7 @@
     <site>
       <id>japrostSiteId</id>
       <name>JaProSt-Site</name>
-      <url>${japrost.distribution.site.url}/java/</url>
+      <url>${japrost.distribution.site.url}/java8/</url>
     </site>
   </distributionManagement>
   <scm>

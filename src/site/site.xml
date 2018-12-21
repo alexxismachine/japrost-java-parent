@@ -16,7 +16,7 @@
         name="JaProSt"
         href="http://www.japrost.de/index.html" />
       <item
-        name="Java"
+        name="Java 8"
         href="index.html" />
     </breadcrumbs>
 
@@ -26,7 +26,7 @@
         href="index.html" />
       <item
         name="Projekte"
-        href="projects.html" />
+        href="../java/projects.html" />
     </menu>
 
     <menu name="Projekt Aufbau">
