@@ -1,10 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>de.japrost</groupId>
     <artifactId>japrost-parent</artifactId>
-    <version>5.2</version>
+    <version>5.3-SNAPSHOT</version>
   </parent>
 
   <artifactId>japrost-java-parent</artifactId>
@@ -17,15 +20,15 @@
 
   <properties>
     <!-- configuration -->
-    <java.source.version>11</java.source.version>
-    <java.target.version>11</java.target.version>
+    <maven.compiler.release>11</maven.compiler.release>
     <japrost.qa.version>1.0-SNAPSHOT</japrost.qa.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- plugin versions -->
     <version.maven-assembly-plugin>2.5.3</version.maven-assembly-plugin>
     <version-maven-checkstyle-plugin>2.17</version-maven-checkstyle-plugin>
+    <version.maven-compiler-plugin>3.8.0</version.maven-compiler-plugin>
     <version.jacoco-maven-plugin>0.8.1</version.jacoco-maven-plugin>
-    <version-maven-javadoc-plugin>2.10.3</version-maven-javadoc-plugin>
+    <version.maven-javadoc-plugin>3.0.1</version.maven-javadoc-plugin>
     <version-maven-jxr-plugin>2.5</version-maven-jxr-plugin>
     <version-maven-source-plugin>2.4</version-maven-source-plugin>
     <!-- dependencies versions compile / runtime -->
@@ -81,125 +84,32 @@
   </dependencyManagement>
 
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>${version.maven-javadoc-plugin}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${version.maven-compiler-plugin}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>${version-maven-source-plugin}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>${java.source.version}</source>
-          <target>${java.target.version}</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>${version-maven-source-plugin}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>${version-maven-javadoc-plugin}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>${version.jacoco-maven-plugin}</version>
-        <executions>
-          <execution>
-            <id>default-prepare-agent</id>
-            <goals>
-              <goal>prepare-agent</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>default-report</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>report</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>default-check</id>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <rule>
-                  <element>BUNDLE</element>
-                  <limits>
-                    <limit>
-                      <!-- overall INSTRUCTION coverage must be 60% -->
-                      <counter>INSTRUCTION</counter>
-                      <value>COVEREDRATIO</value>
-                      <minimum>0.60</minimum>
-                    </limit>
-                    <limit>
-                      <!-- overall BRANCH coverage must be 60% -->
-                      <counter>BRANCH</counter>
-                      <value>COVEREDRATIO</value>
-                      <minimum>0.60</minimum>
-                    </limit>
-                  </limits>
-                </rule>
-              </rules>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>${version-maven-checkstyle-plugin}</version>
-        <dependencies>
-          <dependency>
-            <groupId>com.puppycrawl.tools</groupId>
-            <artifactId>checkstyle</artifactId>
-            <version>6.16.1</version>
-          </dependency>
-          <dependency>
-            <groupId>de.japrost</groupId>
-            <artifactId>japrost-qa</artifactId>
-            <classifier>java-qa-resources</classifier>
-            <version>${japrost.qa.version}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
     </plugins>
   </build>
 
   <!-- additional reporting for java projects -->
   <reporting>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>${version-maven-checkstyle-plugin}</version>
-        <configuration>
-          <configLocation>de/japrost/java/qa/checkstyle_easy-going.xml</configLocation>
-        </configuration>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <report>checkstyle</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jxr-plugin</artifactId>
-        <version>${version-maven-jxr-plugin}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>${version.jacoco-maven-plugin}</version>
-      </plugin>
     </plugins>
   </reporting>
   <profiles>
@@ -233,6 +143,117 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <id>javaReports</id>
+      <activation>
+        <file>
+          <exists>${basedir}/src/main/java</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>${version.jacoco-maven-plugin}</version>
+            <executions>
+              <execution>
+                <id>default-prepare-agent</id>
+                <goals>
+                  <goal>prepare-agent</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>default-report</id>
+                <phase>prepare-package</phase>
+                <goals>
+                  <goal>report</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>default-check</id>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                    <rule>
+                      <element>BUNDLE</element>
+                      <limits>
+                        <limit>
+                          <!-- overall INSTRUCTION coverage must be 60% -->
+                          <counter>INSTRUCTION</counter>
+                          <value>COVEREDRATIO</value>
+                          <minimum>0.60</minimum>
+                        </limit>
+                        <limit>
+                          <!-- overall BRANCH coverage must be 60% -->
+                          <counter>BRANCH</counter>
+                          <value>COVEREDRATIO</value>
+                          <minimum>0.60</minimum>
+                        </limit>
+                      </limits>
+                    </rule>
+                  </rules>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>${version-maven-checkstyle-plugin}</version>
+            <dependencies>
+              <dependency>
+                <groupId>com.puppycrawl.tools</groupId>
+                <artifactId>checkstyle</artifactId>
+                <version>6.16.1</version>
+              </dependency>
+              <dependency>
+                <groupId>de.japrost</groupId>
+                <artifactId>japrost-qa</artifactId>
+                <classifier>java-qa-resources</classifier>
+                <version>${japrost.qa.version}</version>
+              </dependency>
+            </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+      <reporting>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>${version.maven-javadoc-plugin}</version>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>${version-maven-checkstyle-plugin}</version>
+            <configuration>
+              <configLocation>de/japrost/java/qa/checkstyle_easy-going.xml</configLocation>
+            </configuration>
+            <reportSets>
+              <reportSet>
+                <reports>
+                  <report>checkstyle</report>
+                </reports>
+              </reportSet>
+            </reportSets>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jxr-plugin</artifactId>
+            <version>${version-maven-jxr-plugin}</version>
+          </plugin>
+          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>${version.jacoco-maven-plugin}</version>
+          </plugin>
+        </plugins>
+      </reporting>
     </profile>
   </profiles>
   <distributionManagement>
