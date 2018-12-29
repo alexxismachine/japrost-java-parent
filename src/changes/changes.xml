@@ -6,7 +6,10 @@
     <release
       version="11.0.1"
       description="Java 11 updates"
-      date="tbd">
+      date="2018-12-29">
+      <action type="update">
+        Update versions and reporting configuration.
+      </action>
     </release>
     <release
       version="11.0.0"
