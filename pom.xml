@@ -18,25 +18,26 @@
   <properties>
     <!-- configuration -->
     <maven.compiler.release>11</maven.compiler.release>
-    <japrost.qa.version>1.0-SNAPSHOT</japrost.qa.version>
+    <japrost.qa.version>1.0</japrost.qa.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- plugin versions -->
-    <version.maven-assembly-plugin>2.5.3</version.maven-assembly-plugin>
-    <version-maven-checkstyle-plugin>2.17</version-maven-checkstyle-plugin>
-    <version.maven-compiler-plugin>3.8.0</version.maven-compiler-plugin>
     <version.jacoco-maven-plugin>0.8.2</version.jacoco-maven-plugin>
+    <version.maven-assembly-plugin>2.5.3</version.maven-assembly-plugin>
+    <version.maven-checkstyle-plugin>3.0.0</version.maven-checkstyle-plugin>
+    <version.maven-checkstyle-plugin.checkstyle>8.15</version.maven-checkstyle-plugin.checkstyle>
+    <version.maven-compiler-plugin>3.8.0</version.maven-compiler-plugin>
     <version.maven-javadoc-plugin>3.0.1</version.maven-javadoc-plugin>
-    <version-maven-jxr-plugin>3.0.0</version-maven-jxr-plugin>
-    <version-maven-source-plugin>3.0.1</version-maven-source-plugin>
+    <version.maven-jxr-plugin>3.0.0</version.maven-jxr-plugin>
+    <version.maven-source-plugin>3.0.1</version.maven-source-plugin>
     <!-- dependencies versions compile / runtime -->
-    <version.commons-io>2.4</version.commons-io>
-    <version.commons-lang3>3.1</version.commons-lang3>
+    <version.commons-io>2.6</version.commons-io>
+    <version.commons-lang3>3.8</version.commons-lang3>
     <!-- dependencies versions test -->
-    <version.assertj>3.8.0</version.assertj>
+    <version.assertj>3.11.1</version.assertj>
     <version.easymock>3.2</version.easymock>
-    <version.junit>4.12</version.junit>
-    <version.mockito-core>1.10.19</version.mockito-core>
-    <version.testUtils>0.1.1</version.testUtils>
+    <version.junit>5.3.1</version.junit>
+    <version.mockito-core>2.22.0</version.mockito-core>
+    <version.testUtils>0.1.3</version.testUtils>
   </properties>
 
   <dependencyManagement>
@@ -53,10 +54,11 @@
       </dependency>
       <!-- TEST Dependencies -->
       <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
         <version>${version.junit}</version>
-        <scope>test</scope>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.outsideMyBox</groupId>
@@ -87,6 +89,13 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>${version.maven-javadoc-plugin}</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.ow2.asm</groupId>
+              <artifactId>asm</artifactId>
+              <version>7.0</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -96,7 +105,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
-          <version>${version-maven-source-plugin}</version>
+          <version>${version.maven-source-plugin}</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -200,12 +209,15 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>${version-maven-checkstyle-plugin}</version>
+            <version>${version.maven-checkstyle-plugin}</version>
+            <configuration>
+              <excludes>**/module-info.java,module-info.java</excludes>
+            </configuration>
             <dependencies>
               <dependency>
                 <groupId>com.puppycrawl.tools</groupId>
                 <artifactId>checkstyle</artifactId>
-                <version>6.16.1</version>
+                <version>${version.maven-checkstyle-plugin.checkstyle}</version>
               </dependency>
               <dependency>
                 <groupId>de.japrost</groupId>
@@ -227,9 +239,10 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>${version-maven-checkstyle-plugin}</version>
+            <version>${version.maven-checkstyle-plugin}</version>
             <configuration>
               <configLocation>de/japrost/java/qa/checkstyle_easy-going.xml</configLocation>
+              <excludes>**/module-info.java,module-info.java</excludes>
             </configuration>
             <reportSets>
               <reportSet>
@@ -242,7 +255,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-jxr-plugin</artifactId>
-            <version>${version-maven-jxr-plugin}</version>
+            <version>${version.maven-jxr-plugin}</version>
           </plugin>
           <plugin>
             <groupId>org.jacoco</groupId>

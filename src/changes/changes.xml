@@ -4,6 +4,14 @@
   xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
   <body>
     <release
+      version="11.0.2"
+      description="More plugins and dependencies"
+      date="">
+      <action type="update">
+        Add more plugins and dependencies from java projects up here.
+      </action>
+    </release>
+    <release
       version="11.0.1"
       description="Java 11 updates"
       date="2018-12-29">
