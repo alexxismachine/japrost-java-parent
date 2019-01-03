@@ -6,7 +6,7 @@
     <release
       version="11.0.2"
       description="More plugins and dependencies"
-      date="">
+      date="2019-01-03">
       <action type="update">
         Add more plugins and dependencies from java projects up here.
       </action>
