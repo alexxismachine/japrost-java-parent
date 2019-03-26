@@ -4,6 +4,14 @@
   xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
   <body>
     <release
+      version="11.0.3"
+      description="QA section"
+      date="TBA">
+      <action type="add">
+        Moved java part from japrost qa to this project.
+      </action>
+    </release>
+    <release
       version="11.0.2"
       description="More plugins and dependencies"
       date="2019-01-03">

@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>de.japrost</groupId>
+    <artifactId>japrost-java-parent</artifactId>
+    <version>11.0.3-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>japrost-java-qa</artifactId>
+  
+  <name>JaProSt Java QA</name>
+  <description>Java Programming Studio - Java Development QA</description>
+  <url>http://www.japrost.de/java11/qa</url>
+
+  <distributionManagement>
+    <site>
+      <id>japrostSiteId</id>
+      <name>JaProSt-Site</name>
+      <url>${japrost.distribution.site.url}/java11/qa</url>
+    </site>
+  </distributionManagement>
+  
+</project>

@@ -278,4 +278,7 @@
     <url>https://bitbucket.org/daprost/japrost-java-parent</url>
     <tag>HEAD</tag>
   </scm>
+  <modules>
+    <module>japrost-java-qa</module>
+  </modules>
 </project>

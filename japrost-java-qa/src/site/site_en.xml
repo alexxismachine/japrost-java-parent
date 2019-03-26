@@ -3,8 +3,8 @@
   xmlns="http://maven.apache.org/DECORATION/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
-  name="JaProSt Java Development">
-
+  name="JaProSt Java Development QA">
+  
   <body>
     <links>
       <item
@@ -17,30 +17,16 @@
         href="http://www.japrost.de/en/index.html" />
       <item
         name="Java 11"
+        href="../../en/index.html" />
+      <item
+        name="QA"
         href="../en/index.html" />
     </breadcrumbs>
 
-    <menu name="Java">
+    <menu name="Java 11 QA">
       <item
         name="Overview"
         href="index.html" />
-      <item
-        name="QA"
-        href="qa/index.html" />
-    </menu>
-
-    <menu name="Project Layout">
-      <item
-        name="Background"
-        collapse="true"
-        href="background/index.html">
-        <item
-          name="About JaProSt Parent"
-          href="background/about.html" />
-        <item
-          name="Changes"
-          href="./changes-report.html" />
-      </item>
     </menu>
 
     <menu
