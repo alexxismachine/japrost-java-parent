@@ -6,7 +6,13 @@
     <release
       version="11.0.3"
       description="QA section"
-      date="TBA">
+      date="2020-03-14">
+      <action type="update">
+        Next parent version.
+      </action>
+      <action type="update">
+        Add more plugins from java projects up here.
+      </action>
       <action type="add">
         Moved java part from japrost qa to this project.
       </action>

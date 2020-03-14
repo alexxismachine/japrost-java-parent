@@ -1,10 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>de.japrost</groupId>
     <artifactId>japrost-parent</artifactId>
-    <version>5.4-SNAPSHOT</version>
+    <version>5.4</version>
   </parent>
 
   <artifactId>japrost-java-parent</artifactId>
@@ -21,12 +24,15 @@
     <japrost.qa.version>1.0</japrost.qa.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- plugin versions -->
+    <version.build-helper-maven-plugin>3.0.0</version.build-helper-maven-plugin>
     <version.jacoco-maven-plugin>0.8.2</version.jacoco-maven-plugin>
     <version.maven-checkstyle-plugin>3.0.0</version.maven-checkstyle-plugin>
     <version.maven-checkstyle-plugin.checkstyle>8.15</version.maven-checkstyle-plugin.checkstyle>
     <version.maven-compiler-plugin>3.8.0</version.maven-compiler-plugin>
+    <version.maven-failsafe-plugin>2.22.0</version.maven-failsafe-plugin>
     <version.maven-javadoc-plugin>3.0.1</version.maven-javadoc-plugin>
     <version.maven-jxr-plugin>3.0.0</version.maven-jxr-plugin>
+    <version.maven-surefire-plugin>3.0.0-M4</version.maven-surefire-plugin>
     <version.maven-source-plugin>3.0.1</version.maven-source-plugin>
     <!-- dependencies versions compile / runtime -->
     <version.commons-io>2.6</version.commons-io>
@@ -34,7 +40,7 @@
     <!-- dependencies versions test -->
     <version.assertj>3.11.1</version.assertj>
     <version.easymock>3.2</version.easymock>
-    <version.junit>5.3.1</version.junit>
+    <version.junit>5.6.0</version.junit>
     <version.mockito-core>2.22.0</version.mockito-core>
     <version.testUtils>0.1.3</version.testUtils>
   </properties>
@@ -80,12 +86,18 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
   <build>
     <pluginManagement>
       <plugins>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${version.maven-compiler-plugin}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>${version.maven-failsafe-plugin}</version>
+        </plugin>
+        <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>${version.maven-javadoc-plugin}</version>
           <dependencies>
@@ -97,21 +109,21 @@
           </dependencies>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>${version.maven-compiler-plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
           <version>${version.maven-source-plugin}</version>
         </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${version.maven-surefire-plugin}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>${version.build-helper-maven-plugin}</version>
+        </plugin>
       </plugins>
     </pluginManagement>
-    <plugins>
-    </plugins>
   </build>
-
   <!-- additional reporting for java projects -->
   <reporting>
     <plugins>
@@ -123,7 +135,6 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
             <executions>
               <execution>
@@ -135,7 +146,6 @@
             </executions>
           </plugin>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
             <executions>
               <execution>
@@ -206,7 +216,6 @@
             </executions>
           </plugin>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-checkstyle-plugin</artifactId>
             <version>${version.maven-checkstyle-plugin}</version>
             <configuration>
@@ -231,12 +240,10 @@
       <reporting>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
             <version>${version.maven-javadoc-plugin}</version>
           </plugin>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-checkstyle-plugin</artifactId>
             <version>${version.maven-checkstyle-plugin}</version>
             <configuration>
@@ -252,7 +259,6 @@
             </reportSets>
           </plugin>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-jxr-plugin</artifactId>
             <version>${version.maven-jxr-plugin}</version>
           </plugin>

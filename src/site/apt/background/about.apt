@@ -13,63 +13,8 @@ Java Programming Studio - Java Parent
   
 * Properties
 
-** Konfiguration
- 
-*--+--+--+
-|| Property || Beschreibung || Wert ||
-*--+--+--+
-| java.source.version | Source Version für das Compiler-Plugin | 11 |
-*--+--+--+
-| java.target.version | Target Version für das Compiler-Plugin | 11 |
-*--+--+--+
-| japrost.qa.version | Version der QA-Artefakte | 1.0-SNAPSHOT |
-*--+--+--+
-| project.build.sourceEncoding | Encoding des Source-Codes | UTF-8 |
-*--+--+--+
-
-** Build-Plugins 
-
-*--+--+--+
-|| Property || Beschreibung || Wert ||
-*--+--+--+
-| version.maven-assembly-plugin | Plugin-Version | 2.5.3 |
-*--+--+--+
-| version-maven-checkstyle-plugin | Plugin-Version | 2.17 |
-*--+--+--+
-| version.jacoco-maven-plugin | Plugin-Version | 0.8.1 |
-*--+--+--+
-| version-maven-javadoc-plugin | Plugin-Version | 2.10.3 |
-*--+--+--+
-| version-maven-jxr-plugin | Plugin-Version | 2.5 |
-*--+--+--+
-| version-maven-source-plugin | Plugin-Version | 2.4 |
-*--+--+--+
-
-** Laufzeit Abhängigkeiten
-
-*--+--+--+
-|| Property || Beschreibung || Wert ||
-*--+--+--+
-| version.commons-io | Dependency-Version | 2.4 |
-*--+--+--+
-| version.commons-lang3 | Dependency-Version | 3.1 |
-*--+--+--+
-
-** Test Abhängigkeiten
-
-*--+--+--+
-|| Property || Beschreibung || Wert ||
-*--+--+--+
-| version.assertj | Test Dependency-Version | 3.8.0 |
-*--+--+--+
-| version.easymock | Test Dependency-Version | 3.2 |
-*--+--+--+
-| version.junit | Test Dependency-Version | 4.12 |
-*--+--+--+
-| version.mockito-core | Test Dependency-Version | 1.10.19 |
-*--+--+--+
-| version.testUtils | Test Dependency-Version | 0.1.1 |
-*--+--+--+
+  Hauptsächlich Grundkonfiguration (z.B. java version) 
+  und Versionsverwaltung für Plugins und Dependencies.
 
 * Build
 
