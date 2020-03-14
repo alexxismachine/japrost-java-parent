@@ -8,7 +8,7 @@
   </parent>
 
   <artifactId>japrost-java-parent</artifactId>
-  <version>11.0.3</version>
+  <version>11.0.4-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>JaProSt Java Development</name>
@@ -278,7 +278,7 @@
   <scm>
     <developerConnection>scm:git:git://bitbucket.org/daprost/japrost-java-parent</developerConnection>
     <url>https://bitbucket.org/daprost/japrost-java-parent</url>
-    <tag>japrost-java-parent-11.0.3</tag>
+    <tag>HEAD</tag>
   </scm>
   <modules>
     <module>japrost-java-qa</module>
